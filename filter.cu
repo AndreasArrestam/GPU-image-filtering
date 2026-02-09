@@ -176,6 +176,7 @@ int main( int argc, char** argv)
 		glutInitWindowSize( imagesizex*2, imagesizey );
 	else
 		glutInitWindowSize( imagesizex, imagesizey*2 );
+	glutCreateWindow("Low pass filtering");
 	glutDisplayFunc(Draw);
 
 	ResetMilli();
