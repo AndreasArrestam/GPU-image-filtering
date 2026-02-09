@@ -47,7 +47,7 @@ __global__ void median_filter(unsigned char *image, unsigned char *out, const un
 	__shared__	unsigned char sharedMemB[(BLOCKSIZE + 2*kernelSizeX) * (BLOCKSIZE + 2*kernelSizeY)];
 	int divby = (2*kernelSizeX+1)*(2*kernelSizeY+1); // This should stay or be computed only once
 
-
+	//populate shared memory
 	for (int shared_y = threadIdx.y; shared_y < sharedH; shared_y += BLOCKSIZE)
 	{
 		for (int shared_x = threadIdx.x; shared_x < sharedW; shared_x += BLOCKSIZE)
